@@ -1,0 +1,4 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"","9015","Login","chromium","Thu Dec 26 00:12:33 CLST 2024","passed","Thu Dec 26 00:12:42 CLST 2024","","test01.spec.ts","",""
+"","8162","Login","webkit","Thu Dec 26 00:12:33 CLST 2024","passed","Thu Dec 26 00:12:41 CLST 2024","","test01.spec.ts","",""
+"","7121","Login","firefox","Thu Dec 26 00:12:33 CLST 2024","passed","Thu Dec 26 00:12:40 CLST 2024","","test01.spec.ts","",""
