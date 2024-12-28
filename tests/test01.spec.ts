@@ -4,6 +4,7 @@ import { LoginPageMethods } from '../pages/login-page/login-page.methods'
 import { LoginPageData } from '../pages/login-page/login-page.data'
 import { ProductsPageMethods } from '../pages/products-page/products-page.methods'
 import { CartPageMethods } from '../pages/cart-page/cart-page.methods'
+import { Logger } from '../support/logger'
 
 const userCredentials = LoginPageData.credentials;
 
@@ -13,7 +14,7 @@ test('Login', async({page}) => {
     const productsPageMethods = new ProductsPageMethods(page)
     const cartPageMethods = new CartPageMethods(page)
 
-
+    await Logger.logStep('Navigate to the application')
     await commonPageMethods.navigateToTheApplication()
     await loginPageMethods.insertUserName(userCredentials.usernames.standardUser)
     await loginPageMethods.insertPassword(userCredentials.password)
