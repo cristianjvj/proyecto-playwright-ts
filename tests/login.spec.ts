@@ -8,7 +8,7 @@ import { Logger } from '../support/logger'
 
 const userCredentials = LoginPageData.credentials;
 
-test('Login', async({page}) => {
+test('Login with valid credentials', async({page}) => {
     const commonPageMethods = new CommonPageMethods(page)
     const loginPageMethods = new LoginPageMethods(page)
     const productsPageMethods = new ProductsPageMethods(page)
