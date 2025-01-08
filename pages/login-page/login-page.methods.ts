@@ -1,6 +1,7 @@
 import { Page } from 'playwright'
 import { LoginPageElements } from './login-page.elements'
 import { Logger } from '../../support/logger'
+import { expect } from '@playwright/test'
 
 export class LoginPageMethods {
     private page: Page
@@ -25,5 +26,11 @@ export class LoginPageMethods {
     async clickOnLoginButton() {
         await Logger.logStep('Clicking on login button')
         await this.loginPageElements.buttons.login.click()
+    }
+
+    async verifyMessage(expectedText: string) {
+        await Logger.logStep('Getting error message')
+        const text = await this.loginPageElements.otherElements.errorMessage.textContent()
+        expect(text).toContain(expectedText)
     }
 }

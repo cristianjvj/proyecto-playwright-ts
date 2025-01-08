@@ -19,4 +19,15 @@ test.describe('Login', () => {
         await loginPageMethods.clickOnLoginButton()
         await productsPageMethods.verifyProducstPageIsDisplayed()
     })    
+
+    test('Login with invalid credentials', async({page}) => {
+        const commonPageMethods = new CommonPageMethods(page)
+        const loginPageMethods = new LoginPageMethods(page)
+
+        await commonPageMethods.navigateToTheApplication()
+        await loginPageMethods.insertUserName('fdsfdsf')
+        await loginPageMethods.insertPassword('fasfafa')
+        await loginPageMethods.clickOnLoginButton()
+        await loginPageMethods.verifyMessage('Username and password do not match any user in this service')
+    })
 })
