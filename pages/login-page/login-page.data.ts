@@ -8,7 +8,7 @@ export class LoginPageData {
                 problemUser: 'problem_user',
                 performanceGlitchUser: 'performance_glitch_user',
             },
-            password:'secret_sauce'
+            password: 'secret_sauce'
         }
     }
 }

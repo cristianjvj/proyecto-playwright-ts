@@ -2,6 +2,7 @@ import { Page } from 'playwright'
 import { LoginPageElements } from './login-page.elements'
 import { Logger } from '../../support/logger'
 import { expect } from '@playwright/test'
+import { User } from './login-page.interfaces'
 
 export class LoginPageMethods {
     private page: Page
@@ -15,7 +16,6 @@ export class LoginPageMethods {
     async insertUserName(username: string) {
         await Logger.logStep(`Inserting username: ${username}`)
         await this.loginPageElements.testBoxes.username.fill(username)
-        await this.loginPageElements.buttons.login.click()
     }
 
     async insertPassword(password: string) {
@@ -32,5 +32,12 @@ export class LoginPageMethods {
         await Logger.logStep('Getting error message')
         const text = await this.loginPageElements.otherElements.errorMessage.textContent()
         expect(text).toContain(expectedText)
+    }
+
+    async login(user: User) {
+        await this.insertUserName(user.username)
+        await this.insertPassword(user.password)
+        await this.page.waitForTimeout(10000)
+        await this.clickOnLoginButton()
     }
 }
