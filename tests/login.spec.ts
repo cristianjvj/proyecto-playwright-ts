@@ -32,7 +32,7 @@ test.describe('Login', () => {
         await loginPageMethods.verifyMessage('Username and password do not match any user in this service')
     })
 
-    test.only('Login', async({page}) => {
+    test('Login', async({page}) => {
         const commonPageMethods = new CommonPageMethods(page)
         const loginPageMethods = new LoginPageMethods(page)
 
