@@ -10,7 +10,7 @@ export class CheckoutPageElements {
   get inputs() {
     return {
         firstName: this.page.locator('#first-name'),
-        lastName: this.page.locator('last-name'),
+        lastName: this.page.locator('#last-name'),
         postalCode: this.page.locator('#postal-code'),
     }
 }
