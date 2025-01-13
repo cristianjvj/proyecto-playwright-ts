@@ -12,8 +12,7 @@ export class CartPageElements {
 
     get buttons() {
         return{
-            continueShopping: this.page.locator('//a[.="Continue Shopping"]'
-            ).first(),
+            continueShopping: this.page.locator('[value="CONTINUE"]'),
             checkout: this.page.locator('a[href*="checkout"]')
         }
     }
