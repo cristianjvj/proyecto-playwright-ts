@@ -9,7 +9,7 @@ import { CheckoutPageMethods } from '../pages/checkout-page/checkout-page.method
 import { CheckoutOverviewPageElements } from '../pages/checkout-overview-page/checkout-overview-page.elements';
 import { CheckoutOverviewPageMethods } from '../pages/checkout-overview-page/checkout-overview-page.methods';
 
-test.describe.only('Checkout test cases', async () => {
+test.describe('Checkout test cases', async () => {
 
     test('Checkout with valid credentials', async ({ page }) => {
         const commonPageHelper = new CommonPageMethods(page);
