@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "clean-results": "rm -rf allure-results",
+    "clean-results": "rimraf allure-results",
     "run-test": "npx playwright test --reporter=line,allure-playwright",
     "generate-report": "allure generate --single-file ./allure-results -o ./allure-report --clean",
     "open-report": "allure open ./allure-report",
